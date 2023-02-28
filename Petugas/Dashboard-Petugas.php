@@ -1,7 +1,7 @@
 <?php
 include "../Template-SPP/Header.php";
 include "../Template-SPP/Navbar.php";
-include "../Template-SPP/Sidebar.php";
+include "../Template-SPP/SidebarPetugas.php";
 ?>
 
 <!-- Main Content -->

@@ -45,47 +45,57 @@ include "../Template-SPP/SidebarAdmin.php";
               </div>
             </div>
             
-            
+            <?php
+    include "../koneksi.php";
+    $id_kelas = $_GET['id_kelas'];
+    $query_mysql = mysqli_query($koneksi,"SELECT * FROM kelas WHERE id_kelas='$id_kelas'")or 
+    die(mysql_error());
+    $nomor = 1;
+    while($data = mysqli_fetch_array($query_mysql)){
+        ?>
          
             
                 
          
-          
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>Data Transaksi Pembayaran SPP</h4>
-                    <a class='btn btn-primary'  href="TambahKelas.php">Tambah</a>
+                  <h4>FORM UPDATE</h4>
+                    <a class='btn btn-primary'  href="DataKelas.php">KEMBALI</a>
                   <div class="card-header-action">
-                  
+                  <form action="../update-aksi.php" method="post">
+          
                   </div>
                 </div>
                 <div class="card-body p-0">
                   <div class="table-responsive table-invoice">
                     <table class="table table-striped">
-                      <tr>
-                        <th>id_kelas</th>
-                        <th>nama_kelas</th>
-                        <th>kopetensi keahlian</th>
-                        <th>ACTION</th>
-                        
-                      </tr>
-                      <?php 
-    include "../koneksi.php";
-    $sql = mysqli_query($koneksi, "SELECT * FROM kelas");
-
-    while($data = mysqli_fetch_array($sql)){
-        echo "<tr>";
-        echo "<td>".$data['id_kelas']."</td>";
-        echo "<td>".$data['nama_kelas']."</td>";
-        echo "<td>".$data['kompetisi_keahlian']."</td>";
-        echo "<td><a  class='btn btn-primary' href='updateKelas.php?id_kelas=".$data['id_kelas']."'>Ubah</a>
-               <a class='btn btn-danger'  href='hapusKelas.php?id_kelas=".$data['id_kelas']."'>Hapus</a></td>";
-        echo "</tr>";
-    }
-    ?>
+                    <tr>
+                    <td>Nama Kelas</td>
+                    <td>
+                        <input type="hidden" name="id" value="<?php echo $data['id']?>">
+                        <input type="text" name="id_kelas" value="<?php echo $data['id_kelas'] ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama Kelas</td>
+                    <td>
+                        <input type="text" name="nama_kelas" value="<?php echo $data['nama_kelas']?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kompetisi Keahlian</td>
+                    <td>
+                        <input type="text" name="kompetisi_keahlian" value="<?php echo $data['kompetisi_keahlian']?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Simpan"></td>
+                </tr>
     </table>
+</form>
                   </div>
                 </div>
               </div>

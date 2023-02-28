@@ -49,14 +49,14 @@ include "../Template-SPP/SidebarAdmin.php";
          
             
                 
-         
+         <form action="../input-aksi.php" method="post">
           
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>Data Transaksi Pembayaran SPP</h4>
-                    <a class='btn btn-primary'  href="TambahKelas.php">Tambah</a>
+                  <h4>FORM TAMBAH</h4>
+                    <a class='btn btn-primary'  href="DataKelas.php">KEMBALI</a>
                   <div class="card-header-action">
                   
                   </div>
@@ -65,27 +65,25 @@ include "../Template-SPP/SidebarAdmin.php";
                   <div class="table-responsive table-invoice">
                     <table class="table table-striped">
                       <tr>
-                        <th>id_kelas</th>
-                        <th>nama_kelas</th>
-                        <th>kopetensi keahlian</th>
-                        <th>ACTION</th>
-                        
+                        <td>ID KELAS</td>
+                        <td><input type="text" name="id_kelas"></td>
                       </tr>
-                      <?php 
-    include "../koneksi.php";
-    $sql = mysqli_query($koneksi, "SELECT * FROM kelas");
-
-    while($data = mysqli_fetch_array($sql)){
-        echo "<tr>";
-        echo "<td>".$data['id_kelas']."</td>";
-        echo "<td>".$data['nama_kelas']."</td>";
-        echo "<td>".$data['kompetisi_keahlian']."</td>";
-        echo "<td><a  class='btn btn-primary' href='updateKelas.php?id_kelas=".$data['id_kelas']."'>Ubah</a>
-               <a class='btn btn-danger'  href='hapusKelas.php?id_kelas=".$data['id_kelas']."'>Hapus</a></td>";
-        echo "</tr>";
-    }
-    ?>
+                      <tr>
+                        <td>NAMA KELAS</td>
+                        <td><input type="text" name="nama_kelas"></td>
+                      </tr>
+                      <tr>
+                        <td>KOMPETISI KEAHLIAN</td>
+                        <td><input type="text" name="kompetisi_keahlian"></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td><input class='btn btn-primary' type="submit" value="Simpan">
+                            <a class='btn btn-danger' href="DataKelas.php">Kembali</a>
+                    </td>
+                      </tr>
     </table>
+</form>
                   </div>
                 </div>
               </div>
