@@ -20,31 +20,45 @@ include "../Template-SPP/SidebarAdmin.php";
          
             
                 
-         <form action="../input-aksi.php" method="post">
+         <form action="../input-aksiPetugas.php" method="post">
           
           
                   
                   
                   <div class="form-group">
-                    <label for="id_kelas">ID KELAS</label>
-                    <input id="id_kelas" type="text" class="form-control" name="id_kelas">
+                    <label for="id_kelas">ID Petugas</label>
+                    <input id="id_kelas" type="text" class="form-control" name="id_petugas">
                     <div class="invalid-feedback">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="nama_kelas">NAMA KELAS</label>
-                    <input id="nama_kelas" type="text" class="form-control" name="nama_kelas">
+                    <label for="nama_kelas">Username</label>
+                    <input id="nama_kelas" type="text" class="form-control" name="username">
                     <div class="invalid-feedback">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label>KOMPETENSI KEAHLIAN</label>
-                    <select class="form-control selectric" name="kompetensi_keahlian">
-                      <option value="">~~ PILIH KOMPETENSI KEAHLIAN ~~</option>
-                       <option value="REKAYASA PERANGKAT LUNAK">REKAYASA PERANGKAT LUNAK</option>
-                       <option value="TEKNIK AUDIO VIDEO">TEKNIK AUDIO VIDEO</option>
+                    <label for="nama_kelas">Password</label>
+                    <input id="nama_kelas" type="text" class="form-control" name="password">
+                    <div class="invalid-feedback">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nama_kelas">Nama Petugas</label>
+                    <input id="nama_kelas" type="text" class="form-control" name="nama_petugas">
+                    <div class="invalid-feedback">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>LEVEL</label>
+                    <select class="form-control selectric" name="level">
+                      <option value="">~~ PILIH LEVEL PETUGAS ~~</option>
+                       <option value="admin">Admin</option>
+                       <option value="petugas">Petugas</option>
                     </select>
                   </div>
 
@@ -55,7 +69,7 @@ include "../Template-SPP/SidebarAdmin.php";
 
                   </div>
 </form>
-<a href="DataKelas.php" class="btn btn-secondary btn-lg btn-block">KEMBALI</a>
+<a href="DataPetugas.php" class="btn btn-secondary btn-lg btn-block">KEMBALI</a>
                   </div>
                 </div>
               </div>

@@ -14,47 +14,45 @@ include "../Template-SPP/SidebarAdmin.php";
                   <div class="card-stats-title">FORM EDIT
         <?php 
             include "../koneksi.php";
-            $id = $_GET['id_kelas'];
-            $query_mysql = mysqli_query($koneksi,"SELECT * FROM kelas WHERE id_kelas='$id' ")or die(mysql_error());
+            $id = $_GET['id_spp'];
+            $query_mysql = mysqli_query($koneksi,"SELECT * FROM spp WHERE id_spp='$id' ")or die(mysql_error());
             $nomor = 1;
             while($data = mysqli_fetch_array($query_mysql)) {
 
             
         ?>
         <div class="card-body">
-          <form method="POST" action="../update-aksi.php">
+          <form method="POST" action="../update-aksiSPP.php">
             <div class="form-group">
-              <label for="id_kelas">ID KELAS</label>
-              <input id="id_kelas" type="text" class="form-control" name="id_kelas" value="<?php echo $data['id_kelas']; ?>" readonly>
+              <label for="id_kelas">ID SPP</label>
+              <input id="id_kelas" type="text" class="form-control" name="id_spp" value="<?php echo $data['id_spp']; ?>" readonly>
               <div class="invalid-feedback">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="nama_kelas">NAMA KELAS</label>
-              <input id="nama_kelas" type="text" class="form-control" name="nama_kelas" value="<?php echo $data['nama_kelas']; ?>" >
+              <label for="nama_kelas">TAHUN</label>
+              <input id="nama_kelas" type="text" class="form-control" name="tahun" value="<?php echo $data['tahun']; ?>" >
               <div class="invalid-feedback">
               </div>
             </div>
 
             <div class="form-group">
-                    <label>KOMPETENSI KEAHLIAN</label>
-                    <select id="kompetensi_keahlian" class="form-control selectric" name="kompetensi_keahlian" value="<?php echo $data['kompetensi_keahlian']; ?>">
-                      <option value="">~~ PILIH KOMPETENSI KEAHLIAN ~~</option>
-                       <option value="REKAYASA PERANGKAT LUNAK">REKAYASA PERANGKAT LUNAK</option>
-                       <option value="TEKNIK AUDIO VIDEO">TEKNIK AUDIO VIDEO</option>
-                    </select>
-                  </div>
+              <label for="nama_kelas">NOMINAL</label>
+              <input id="nama_kelas" type="text" class="form-control" name="nominal" value="<?php echo $data['nominal']; ?>" >
+              <div class="invalid-feedback">
+              </div>
+            </div>
 
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">
-                      UBAH DATA KELAS
+                      UBAH DATA SPP
                     </button>
 
                   </div>
                   <?php } ?>
             </form>
-            <a href="DataKelas.php" class="btn btn-secondary btn-lg btn-block">KEMBALI</a>
+            <a href="DataSPP.php" class="btn btn-secondary btn-lg btn-block">KEMBALI</a>
         </div>
                   </div>
                 </div>

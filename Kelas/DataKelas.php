@@ -57,9 +57,22 @@ include "../Template-SPP/SidebarAdmin.php";
                 <div class="card-header">
                   <h4>Data Transaksi Pembayaran SPP</h4>
                     <a class='btn btn-primary'  href="TambahKelas.php">Tambah</a>
+                    <?php 
+                    if (isset($_GET['pesan'])) {
+                      $pesan = $_GET['pesan'];
+                      if ($pesan == "input") {
+                        echo "<div class='m1-3'><b>database berhasil di input.</b></div>";
+                      }else if ($pesan == "update") {
+                        echo "<div class='m1-3 '><b>database berhasil di update.</b></div>";
+                      }else if ($pesan == "hapus") {
+                      echo "data berhasil di hapus.";
+                    }
+                  }
+                  ?>
                   <div class="card-header-action">
-                  
+  
                   </div>
+                  
                 </div>
                 <div class="card-body p-0">
                   <div class="table-responsive table-invoice">
@@ -79,7 +92,7 @@ include "../Template-SPP/SidebarAdmin.php";
         echo "<tr>";
         echo "<td>".$data['id_kelas']."</td>";
         echo "<td>".$data['nama_kelas']."</td>";
-        echo "<td>".$data['kompetisi_keahlian']."</td>";
+        echo "<td>".$data['kompetensi_keahlian']."</td>";
         echo "<td><a  class='btn btn-primary' href='updateKelas.php?id_kelas=".$data['id_kelas']."'>Ubah</a>
                <a class='btn btn-danger'  href='hapusKelas.php?id_kelas=".$data['id_kelas']."'>Hapus</a></td>";
         echo "</tr>";

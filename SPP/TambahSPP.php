@@ -20,33 +20,33 @@ include "../Template-SPP/SidebarAdmin.php";
          
             
                 
-         <form action="../input-aksi.php" method="post">
+         <form action="../input-aksiSPP.php" method="post">
           
           
                   
                   
                   <div class="form-group">
-                    <label for="id_kelas">ID KELAS</label>
-                    <input id="id_kelas" type="text" class="form-control" name="id_kelas">
+                    <label for="id_kelas">ID SPP</label>
+                    <input id="id_kelas" type="text" class="form-control" name="id_spp">
                     <div class="invalid-feedback">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="nama_kelas">NAMA KELAS</label>
-                    <input id="nama_kelas" type="text" class="form-control" name="nama_kelas">
+                    <label for="nama_kelas">TAHUN</label>
+                    <input id="nama_kelas" type="text" class="form-control" name="tahun">
                     <div class="invalid-feedback">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label>KOMPETENSI KEAHLIAN</label>
-                    <select class="form-control selectric" name="kompetensi_keahlian">
-                      <option value="">~~ PILIH KOMPETENSI KEAHLIAN ~~</option>
-                       <option value="REKAYASA PERANGKAT LUNAK">REKAYASA PERANGKAT LUNAK</option>
-                       <option value="TEKNIK AUDIO VIDEO">TEKNIK AUDIO VIDEO</option>
-                    </select>
+                    <label for="nama_kelas">NOMINAL</label>
+                    <input id="nama_kelas" type="text" class="form-control" name="nominal">
+                    <div class="invalid-feedback">
+                    </div>
                   </div>
+
+                  
 
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">
