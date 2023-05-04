@@ -6,6 +6,6 @@ $kompetensi_keahlian = $_POST['kompetensi_keahlian'];
 
 mysqli_query($koneksi,"UPDATE kelas SET nama_kelas='$nama_kelas', kompetensi_keahlian='$kompetensi_keahlian' WHERE id_kelas='$id_kelas'");
 
-header("location:Kelas/DataKelas.php?pesan=update");
+header("location:Admin/CRUD-Kelas.php?pesan=update");
 
 ?>

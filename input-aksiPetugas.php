@@ -7,5 +7,5 @@ $nama_petugas = $_POST['nama_petugas'];
 $level = $_POST['level'];
 
 mysqli_query($koneksi, "INSERT INTO petugas VALUES ('$id_petugas','$username','$password','$nama_petugas','$level')");
-header("location:Petugas/DataPetugas.php?pesan=input");
+header("location:Admin/CRUD-Petugas.php?pesan=input");
 ?>

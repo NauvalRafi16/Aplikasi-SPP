@@ -1,7 +1,7 @@
 <?php
 include "../Template-SPP/Header.php";
 include "../Template-SPP/Navbar.php";
-include "../Template-SPP/SidebarAdmin.php";
+include "../Template-SPP/Sidebar.php";
 ?>
 
 <<!-- Main Content -->
@@ -11,7 +11,7 @@ include "../Template-SPP/SidebarAdmin.php";
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="card card-statistic-2">
                 <div class="card-stats">
-                  <div class="card-stats-title">CRUD DATA KELAS
+                  <div class="card-stats-title">CRUD DATA PETUGAS
               
                     <div class="card-stats-items">
                       <div class="card-stats-item">
@@ -56,7 +56,7 @@ include "../Template-SPP/SidebarAdmin.php";
               <div class="card">
                 <div class="card-header">
                   <h4>Data Transaksi Pembayaran SPP</h4>
-                    <a class='btn btn-primary'  href="TambahKelas.php">Tambah</a>
+                    <a class='btn btn-primary'  href="TambahPetugas.php">Tambah</a>
                     <?php 
                     if (isset($_GET['pesan'])) {
                       $pesan = $_GET['pesan'];
@@ -78,23 +78,28 @@ include "../Template-SPP/SidebarAdmin.php";
                   <div class="table-responsive table-invoice">
                     <table class="table table-striped">
                       <tr>
-                        <th>id_kelas</th>
-                        <th>nama_kelas</th>
-                        <th>kopetensi keahlian</th>
+                        <th>Id Petugas</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Nama Petugas</th>
+                        <th>Level</th>
                         <th>ACTION</th>
                         
                       </tr>
                       <?php 
     include "../koneksi.php";
-    $sql = mysqli_query($koneksi, "SELECT * FROM kelas");
+    $sql = mysqli_query($koneksi, "SELECT * FROM petugas");
 
     while($data = mysqli_fetch_array($sql)){
         echo "<tr>";
-        echo "<td>".$data['id_kelas']."</td>";
-        echo "<td>".$data['nama_kelas']."</td>";
-        echo "<td>".$data['kompetensi_keahlian']."</td>";
-        echo "<td><a  class='btn btn-primary' href='updateKelas.php?id_kelas=".$data['id_kelas']."'>Ubah</a>
-               <a class='btn btn-danger'  href='hapusKelas.php?id_kelas=".$data['id_kelas']."'>Hapus</a></td>";
+        echo "<td>".$data['id_petugas']."</td>";
+        echo "<td>".$data['username']."</td>";
+        echo "<td>".$data['password']."</td>";
+        echo "<td>".$data['nama_petugas']."</td>";
+        echo "<td>".$data['level']."</td>";
+        echo "<td>
+        <a  class='btn btn-primary' href='UpdatePetugas.php?id_petugas=".$data['id_petugas']."'>Ubah</a>
+        <a class='btn btn-danger'  href='HapusPetugas.php?id_petugas=".$data['id_petugas']."'>Hapus</a></td>";
         echo "</tr>";
     }
     ?>
