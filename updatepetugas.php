@@ -8,6 +8,6 @@ $level = $_POST['level'];
 
 mysqli_query($koneksi,"UPDATE petugas SET username='$username', password='$password', nama_petugas='$nama_petugas', level='$level' WHERE id_petugas='$id_petugas'");
 
-header("location:../CRUD-Petugas.php?pesan=update");
+header("location:Admin/CRUD-Petugas.php?pesan=update");
 
 ?>

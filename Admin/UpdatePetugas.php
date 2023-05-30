@@ -66,7 +66,7 @@
 
             <div class="form-group">
                     <label for="nama_kelas">Password</label>
-                    <input id="nama_kelas" type="text" class="form-control" name="password" value="<?php echo $data['password']; ?>">
+                    <input id="nama_kelas" type="password" class="form-control" name="password" value="<?php echo $data['password']; ?>">
                     <div class="invalid-feedback">
                     </div>
                   </div>
@@ -80,8 +80,8 @@
 
                   <div class="form-group">
                     <label>LEVEL</label>
-                    <select class="form-control selectric" name="level" value="<?php echo $data['level']; ?>"> 
-                      <option value="">~~ PILIH LEVEL PETUGAS ~~</option>
+                    <select class="form-control selectric" name="level">
+                      <option value="<?php echo $data['level']?>"><?php echo $data['level']?></option>
                        <option value="admin">Admin</option>
                        <option value="petugas">Petugas</option>
                     </select>

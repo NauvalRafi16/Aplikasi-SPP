@@ -10,7 +10,7 @@
             <li class="menu-header">Dashboard</li>
           
 
-            <li><a class="nav-link" href="Histori-Pembayaran.php"><i class="fas fa-history"></i> <span>Histori Pembayaran</span></a></li>
+            <li><a class="nav-link" href="../Siswa/Histori-Pembayaran.php"><i class="fas fa-history"></i> <span>Histori Pembayaran</span></a></li>
 
           </ul>
 

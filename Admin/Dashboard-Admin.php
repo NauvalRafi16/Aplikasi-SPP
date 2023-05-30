@@ -112,32 +112,37 @@ include"../Template-SPP/Sidebar.php";
               <div class="card">
                 <div class="card-body p-0">
                   <div class="table-responsive table-invoice">
-                    <table class="table table-striped">
+                  <h4>History Pembayaran</h4>
+                  <table class="table table-striped">
                       <tr>
-                        <th>#</th>
+                        <th>id pembayaran</th>
+                        <th>Nama Petugas</th>
                         <th>NISN</th>
-                        <th>Nama Siswa</th>
                         <th>Tanggal Bayar</th>
-                        <th>Jumlah Bayar</th>
-                        <th>Petugas</th>
+                        <th>Bulan di Bayar</th>
+                        <th>Tahun di Bayar</th>
+                        <th>Id SPP</th>
+                        <th>jumlah bayar</th>
+                        
                       </tr>
-                      <tr>
-                        <td><a href="#">1</a></td>
-                        <td>2122.10.336</td>
-                        <td class="font-weight-600">Adnan Alif Faturrahman</td>
-                        <td>01-1-2022</td>
-                        <td>100.000</td>
-                        <td><div class="badge badge-success">Petugas</div></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">2</a></td>
-                        <td>2122.10.337</td>
-                        <td class="font-weight-600">Albretus Ichvanius Giharta</td>
-                        <td>01-1-2022</td>
-                        <td>100.000</td>
-                        <td><div class="badge badge-success">Admin</div></td>
-                      </tr>
-                    </table>
+                      <?php 
+    include "../koneksi.php";
+    $sql = mysqli_query($koneksi,"SELECT*FROM pembayaran");
+
+    while($data = mysqli_fetch_array($sql)){
+        echo "<tr>";
+        echo "<td>".$data['id_pembayaran']."</td>";
+        echo "<td>".$data['id_petugas']."</td>";
+        echo "<td>".$data['nisn']."</td>";
+        echo "<td>".$data['tgl_bayar']."</td>";
+        echo "<td>".$data['bulan_dibayar']."</td>";
+        echo "<td>".$data['tahun_dibayar']."</td>";
+        echo "<td>".$data['id_spp']."</td>";
+        echo "<td>".$data['jumlah_bayar']."</td>";
+        echo "</tr>";
+    }
+    ?>
+    </table>
                   </div>
                 </div>
               </div>

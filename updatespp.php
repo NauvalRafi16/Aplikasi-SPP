@@ -6,6 +6,6 @@ $nominal = $_POST['nominal'];
 
 mysqli_query($koneksi,"UPDATE spp SET tahun='$tahun', nominal='$nominal' WHERE id_spp='$id_spp'");
 
-header("location:Admin/CRUD-SPP.php?pesan=update");
+header("location:Admin/CRUD-Petugas.php?pesan=update");
 
 ?>

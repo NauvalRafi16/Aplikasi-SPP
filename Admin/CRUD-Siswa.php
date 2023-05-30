@@ -49,26 +49,28 @@ include "../Template-SPP/Sidebar.php";
                         <th>nisn</th>
                         <th>nis</th>
                         <th>nama</th>
-                        <th>id_kelas</th>
+                        <th>nama_kelas</th>
                         <th>alamat</th>
                         <th>no_tlp</th>
-                        <th>id_spp</th>
+                        <th>nominal</th>
                         <th>ACTION</th>
                         
                       </tr>
                       <?php 
     include "../koneksi.php";
-    $sql = mysqli_query($koneksi, "SELECT * FROM siswa");
+    $sql = mysqli_query($koneksi, 
+    "SELECT siswa.nisn, siswa.nis, siswa.nama, kelas.nama_kelas, siswa.alamat, siswa.no_tlp, spp.nominal 
+    FROM siswa,kelas,spp WHERE siswa.id_kelas = kelas.id_kelas AND siswa.id_spp = spp.id_spp");
 
     while($data = mysqli_fetch_array($sql)){
         echo "<tr>";
         echo "<td>".$data['nisn']."</td>";
         echo "<td>".$data['nis']."</td>";
         echo "<td>".$data['nama']."</td>";
-        echo "<td>".$data['id_kelas']."</td>";
+        echo "<td>".$data['nama_kelas']."</td>";
         echo "<td>".$data['alamat']."</td>";
         echo "<td>".$data['no_tlp']."</td>";
-        echo "<td>".$data['id_spp']."</td>";
+        echo "<td>".$data['nominal']."</td>";
         echo "<td>
               <a  class='btn btn-primary' href='UpdateSiswa.php?nisn=".$data['nisn']."'>Ubah</a>
                <a class='btn btn-danger'  href='HapusSiswa.php?nisn=".$data['nisn']."'>Hapus</a></td>";
